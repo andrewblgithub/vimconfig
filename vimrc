@@ -11,7 +11,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'ctrlp.vim'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-airline/vim-airline'
@@ -35,17 +34,21 @@ let mapleader = " "
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap jk <esc>
+map <C-n> :NERDTreeToggle<CR>
 
 syntax on
 set number
-colorscheme desert
+colorscheme desert 
 set visualbell
 set backspace=indent,eol,start
-let g:nerdtree_tabs_open_on_console_startup=1
 set wrap
 set linebreak
 nnoremap Q <nop>
 set synmaxcol=1200
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let NERDTreeQuitOnOpen = 1
+let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
 
 " ruby stuff
 filetype plugin indent on
