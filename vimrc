@@ -14,6 +14,7 @@ Plugin 'ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-airline/vim-airline'
+Plugin 'alvan/vim-closetag'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,8 +48,9 @@ nnoremap Q <nop>
 set synmaxcol=1200
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let NERDTreeQuitOnOpen = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 set laststatus=2
+set mouse=a
 
 " ruby stuff
 filetype plugin indent on
