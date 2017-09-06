@@ -14,7 +14,12 @@ Plugin 'ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'alvan/vim-closetag'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'romainl/Apprentice'
+Plugin 'digitaltoad/vim-pug'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -38,8 +43,10 @@ inoremap jk <esc>
 map <C-n> :NERDTreeToggle<CR>
 
 syntax on
+filetype plugin indent on
 set number
-colorscheme desert 
+colorscheme apprentice 
+set t_Co=256
 set visualbell
 set backspace=indent,eol,start
 set wrap
@@ -49,11 +56,16 @@ set synmaxcol=1200
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let NERDTreeQuitOnOpen = 1
 let g:airline#extensions#tabline#enabled = 0
+let g:airline_theme = 'bubblegum'
 set laststatus=2
 set mouse=a
 
+" js stuff
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
+
 " ruby stuff
-filetype plugin indent on
 set expandtab
 set tabstop=2 shiftwidth=2 softtabstop=2
 set autoindent
