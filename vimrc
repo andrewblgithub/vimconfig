@@ -59,6 +59,9 @@ let g:airline#extensions#tabline#enabled = 0
 let g:airline_theme = 'bubblegum'
 set laststatus=2
 set mouse=a
+set guifont=Monaco:h12
+highlight LineNr guibg=#262626
+highlight LineNr ctermbg=235
 
 " js stuff
 let g:javascript_plugin_jsdoc = 1
@@ -71,11 +74,15 @@ set tabstop=2 shiftwidth=2 softtabstop=2
 set autoindent
 
 " cursor config
-if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
-else
-    let &t_SI = "\e[5 q"
-    let &t_EI = "\e[2 q"
-endif
+set guicursor+=n-v-c:blinkon0
+
+" if exists('$TMUX')
+"    let &t_SI = '\<Esc>Ptmux;\<Esc>\e[5 'q\<Esc>\\"
+"    let &t_EI = '\<Esc>Ptmux;\<Esc>\e[2 'q\<Esc>\\"
+" else
+"    let &t_SI = '\e[5 q'
+"    let &t_EI = '\e[2 q'
+" endif
+
+" let &guicursor = substitute(&guicursor, 'n-v-c:', '&blinkon0-', '')
 
