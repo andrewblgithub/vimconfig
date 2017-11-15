@@ -54,7 +54,8 @@ set linebreak
 nnoremap Q <nop>
 set synmaxcol=1200
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-let NERDTreeQuitOnOpen = 1
+" let NERDTreeQuitOnOpen = 1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_theme = 'bubblegum'
 set laststatus=2
@@ -62,6 +63,8 @@ set mouse=a
 set guifont=Monaco:h12
 highlight LineNr guibg=#262626
 highlight LineNr ctermbg=235
+set ttyfast
+set lazyredraw
 
 " js stuff
 let g:javascript_plugin_jsdoc = 1
@@ -78,6 +81,3 @@ set guicursor+=n-v-c:blinkon0
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
-" let &guicursor = substitute(&guicursor, 'n-v-c:', '&blinkon0-', '')
-
