@@ -20,6 +20,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'romainl/Apprentice'
 Plugin 'digitaltoad/vim-pug'
+Plugin 'scrooloose/nerdcommenter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -46,7 +47,6 @@ syntax on
 filetype plugin indent on
 set number
 colorscheme apprentice 
-set t_Co=256
 set visualbell
 set backspace=indent,eol,start
 set wrap
@@ -60,10 +60,10 @@ let g:airline#extensions#tabline#enabled = 0
 let g:airline_theme = 'bubblegum'
 set laststatus=2
 set mouse=a
-set guifont=Monaco:h12
+"set guifont=Monaco:h12
 highlight LineNr guibg=#262626
 highlight LineNr ctermbg=235
-set ttyfast
+"set ttyfast
 set lazyredraw
 
 " js stuff
@@ -77,7 +77,7 @@ set tabstop=2 shiftwidth=2 softtabstop=2
 set autoindent
 
 " cursor config
-set guicursor+=n-v-c:blinkon0
+"set guicursor+=n-v-c:blinkon0
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
