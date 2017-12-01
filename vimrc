@@ -21,12 +21,9 @@ filetype off                  " required
     Plugin 'ctrlp.vim'
     Plugin 'scrooloose/nerdtree'
     Plugin 'jiangmiao/auto-pairs'
-    Plugin 'vim-airline/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
     Plugin 'alvan/vim-closetag'
     Plugin 'pangloss/vim-javascript'
     Plugin 'mxw/vim-jsx'
-    Plugin 'romainl/Apprentice'
     Plugin 'digitaltoad/vim-pug'
     Plugin 'scrooloose/nerdcommenter'
     "...All your other bundles...
@@ -69,7 +66,6 @@ map <C-n> :NERDTreeToggle<CR>
 syntax on
 filetype plugin indent on
 set number
-colorscheme apprentice 
 set visualbell
 set backspace=indent,eol,start
 set wrap
@@ -79,13 +75,8 @@ set synmaxcol=1200
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 " let NERDTreeQuitOnOpen = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:airline#extensions#tabline#enabled = 0
-let g:airline_theme = 'bubblegum'
 set laststatus=2
 set mouse=a
-"set guifont=Monaco:h12
-highlight LineNr guibg=#262626
-highlight LineNr ctermbg=235
 "set ttyfast
 set lazyredraw
 
@@ -98,9 +89,3 @@ let g:jsx_ext_required = 0
 set expandtab
 set tabstop=2 shiftwidth=2 softtabstop=2
 set autoindent
-
-" cursor config
-"set guicursor+=n-v-c:blinkon0
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
