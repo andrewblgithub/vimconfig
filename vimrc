@@ -26,6 +26,7 @@ filetype off                  " required
     Plugin 'mxw/vim-jsx'
     Plugin 'digitaltoad/vim-pug'
     Plugin 'scrooloose/nerdcommenter'
+    Plugin 'metakirby5/codi.vim'
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing Vundles, please ignore key map error messages"
@@ -66,14 +67,17 @@ map <C-n> :NERDTreeToggle<CR>
 syntax on
 filetype plugin indent on
 set number
-set visualbell
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
 set backspace=indent,eol,start
 set wrap
 set linebreak
 nnoremap Q <nop>
 set synmaxcol=1200
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-" let NERDTreeQuitOnOpen = 1
+let NERDTreeQuitOnOpen = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 set laststatus=2
 set mouse=a
