@@ -18,7 +18,6 @@ filetype off                  " required
     Plugin 'VundleVim/Vundle.vim'
     "Add your bundles here
     Plugin 'tpope/vim-rails'
-    Plugin 'ctrlp.vim'
     Plugin 'scrooloose/nerdtree'
     Plugin 'jiangmiao/auto-pairs'
     Plugin 'alvan/vim-closetag'
@@ -26,14 +25,14 @@ filetype off                  " required
     Plugin 'mxw/vim-jsx'
     Plugin 'digitaltoad/vim-pug'
     Plugin 'scrooloose/nerdcommenter'
-    Plugin 'metakirby5/codi.vim'
+    Plugin 'Valloric/YouCompleteMe'
+    Plugin 'tpope/vim-fugitive'
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing Vundles, please ignore key map error messages"
         echo ""
         :PluginInstall
     endif
-
     call vundle#end() 
     "must be last
     filetype plugin indent on " load filetype plugins/indent settings
@@ -58,12 +57,14 @@ filetype off                  " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" key remaps
 let mapleader = " "
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap jk <esc>
 map <C-n> :NERDTreeToggle<CR>
 
+" misc settings
 syntax on
 filetype plugin indent on
 set number
@@ -76,13 +77,13 @@ set wrap
 set linebreak
 nnoremap Q <nop>
 set synmaxcol=1200
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let NERDTreeQuitOnOpen = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 set laststatus=2
 set mouse=a
 "set ttyfast
-set lazyredraw
+"set lazyredraw
+set completeopt-=preview
 
 " js stuff
 let g:javascript_plugin_jsdoc = 1
